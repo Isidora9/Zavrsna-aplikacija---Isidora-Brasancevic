@@ -20,9 +20,12 @@ namespace ZavrsnaAplikacija.Models
         {
             this.Rentals = new HashSet<Rental>();
         }
-    
         public int CustomerId { get; set; }
+        [Required]
+        [RegularExpression(@"^[a-zA-Z ]+$", ErrorMessage = "Use letters only please.")]
+        [Display(Name = "Customer’s Name")]
         public string Name { get; set; }
+        [Required]
         [Display(Name = "Driver's license number")]
         public Nullable<int> DriverLicNo { get; set; }
     

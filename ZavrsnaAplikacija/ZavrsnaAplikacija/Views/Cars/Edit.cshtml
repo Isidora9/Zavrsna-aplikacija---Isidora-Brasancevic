@@ -4,7 +4,7 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2 class="my-2">Edit</h2>
 
 
 @using (Html.BeginForm())
@@ -53,7 +53,7 @@
             @Html.LabelFor(model => model.Available, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.Available)
+                    @Html.EditorFor(model => model.Available, new { htmlAttributes = new { @class = "form-select", @id = "exampleSelect1" } })
                     @Html.ValidationMessageFor(model => model.Available, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -61,7 +61,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default btn-outline-success my-3" />
             </div>
         </div>
     </div>
