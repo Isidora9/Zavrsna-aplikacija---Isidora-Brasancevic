@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Xml.Linq;
 using ZavrsnaAplikacija.Models;
 
 namespace ZavrsnaAplikacija.Controllers
@@ -111,7 +112,14 @@ namespace ZavrsnaAplikacija.Controllers
         {
             Car car = db.Cars.Find(id);
             db.Cars.Remove(car);
-            db.SaveChanges();
+            try 
+            {
+                db.SaveChanges();
+            }
+            catch
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             return RedirectToAction("Index");
         }
 

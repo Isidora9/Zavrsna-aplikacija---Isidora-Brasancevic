@@ -10,7 +10,7 @@
     <h4>Customer</h4>
     <hr />
     <div class="card bg-light mb-3" style="max-width: 23rem;">
-        <div class="card-header">Are you sure you want to delete this customer?</div>
+        <div class="card-header">Customer details</div>
         <div class="card-body">
             <dl class="dl-horizontal">
                 <dt>
@@ -31,14 +31,52 @@
             </dl>
         </div>
     </div>
-
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default btn-outline-success" /> |
+            @*<input type="submit" value="Delete" class="btn btn-default btn-outline-success" /> |*@
+            <button class="btn btn-default btn-outline-success" type="button"
+                    data-bs-toggle="modal" data-bs-target="#myModal">
+                Delete
+            </button> |
             @Html.ActionLink("Back to List", "Index")
         </div>
     }
+
+    @*@using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default btn-outline-success" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }*@
+</div>
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this customer?</p>
+            </div>
+            <div class="modal-footer">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Yes" class="btn btn-default btn-outline-success" />
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
 </div>

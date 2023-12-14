@@ -111,7 +111,14 @@ namespace ZavrsnaAplikacija.Controllers
         {
             Customer customer = db.Customers.Find(id);
             db.Customers.Remove(customer);
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             return RedirectToAction("Index");
         }
 
