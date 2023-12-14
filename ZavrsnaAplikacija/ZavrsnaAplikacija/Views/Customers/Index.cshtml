@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ZavrsnaAplikacija.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="my-2">Customers</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.DriverLicNo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table-light">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DriverLicNo)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CustomerId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CustomerId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CustomerId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
