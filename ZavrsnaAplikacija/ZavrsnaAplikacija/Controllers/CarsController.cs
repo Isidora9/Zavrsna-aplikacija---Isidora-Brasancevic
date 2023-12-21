@@ -6,7 +6,6 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using System.Xml.Linq;
 using ZavrsnaAplikacija.Models;
 
 namespace ZavrsnaAplikacija.Controllers
