@@ -65,11 +65,6 @@ namespace ZavrsnaAplikacija.Controllers.Api
             Mapper.Map(rentalDto, rentalInDb);
             _context.SaveChanges();
             return Ok();
-            //rentalInDb.RentalId = rental.RentalId;
-            //rentalInDb.CustomerId = rental.CustomerId;
-            //rentalInDb.CarId = rental.CarId;
-            //rentalInDb.DateRented = rental.DateRented;
-            //rentalInDb.DateReturned = rental.DateReturned;
         }
         // DELETE/api/Rentals/1
 

@@ -13,17 +13,9 @@ namespace ZavrsnaAplikacija.Dtos
         public int RentalId { get; set; }
         public Nullable<int> CustomerId { get; set; }
         public Nullable<int> CarId { get; set; }
-        //[Required]
-        [Display(Name = "Date Rented")]
-        [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> DateRented { get; set; }
-        //[Required]
-        [Display(Name = "Date Returned")]
-        [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> DateReturned { get; set; }
-
         public CarDto Car { get; set; }
         public CustomerDto Customer { get; set; }
-
     }
 }
