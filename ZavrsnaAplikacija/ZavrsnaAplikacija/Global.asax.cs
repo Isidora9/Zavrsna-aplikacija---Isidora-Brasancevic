@@ -1,3 +1,4 @@
+using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,8 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using ZavrsnaAplikacija.App_Start;
+using System.Data.Entity;
 
 namespace ZavrsnaAplikacija
 {
@@ -15,6 +18,10 @@ namespace ZavrsnaAplikacija
     {
         protected void Application_Start()
         {
+    //        GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings
+    //.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            //GlobalConfiguration.Configure(WebApiConfig.Register);
+            Mapper.Initialize(c => c.AddProfile<MappingProfile>());
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

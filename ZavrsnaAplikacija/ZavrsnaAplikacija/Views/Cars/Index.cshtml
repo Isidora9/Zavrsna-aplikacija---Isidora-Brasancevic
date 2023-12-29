@@ -1,0 +1,108 @@
+﻿@model IEnumerable<ZavrsnaAplikacija.Models.Car>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="my-2">Cars</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Manufacturer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LicensePlate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Available)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manufacturer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LicensePlate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Available)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.CarId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.CarId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.CarId })
+            </td>
+        </tr>
+    }
+
+    </table>*@
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Manufacturer)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.LicensePlate)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Available)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table-light">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manufacturer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LicensePlate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Available)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CarId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CarId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CarId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
