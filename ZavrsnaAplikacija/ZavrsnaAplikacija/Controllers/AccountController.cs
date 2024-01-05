@@ -9,6 +9,8 @@ using System.Web;
 using System.Web.Mvc;
 using ZavrsnaAplikacija.App_Start;
 using ZavrsnaAplikacija.Models;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace ZavrsnaAplikacija.Controllers
 {
@@ -69,14 +71,16 @@ namespace ZavrsnaAplikacija.Controllers
             {
                 return View(model);
             }
-
+            /// Users / Index
+            Debug.WriteLine("Evo urla   " + returnUrl);
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    //return RedirectToLocal(returnUrl);
+                    return RedirectToAction("Index", "Users");
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");

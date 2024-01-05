@@ -25,7 +25,7 @@ namespace ZavrsnaAplikacija.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "UserRoles")]
+        [Display(Name = "User Role")]
         public string UserRoles { get; set; }
 
         [Required]
@@ -34,7 +34,7 @@ namespace ZavrsnaAplikacija.Models
         public string Email { get; set; }
 
         [Required]
-        [Display(Name = "UserName")]
+        [Display(Name = "Username")]
         public string UserName { get; set; }
 
         [Required]
@@ -53,6 +53,10 @@ namespace ZavrsnaAplikacija.Models
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+        //[Required]
+        //[Display(Name = "Username")]
+        //public string UserName { get; set; }
+
     }
     public class ExternalLoginListViewModel
     {
