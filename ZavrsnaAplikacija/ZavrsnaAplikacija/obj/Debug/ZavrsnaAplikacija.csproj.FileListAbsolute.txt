@@ -108,3 +108,9 @@ D:\Dora Kurs\WEB programiranje\Cas16\ZavrsnaAplikacija\ZavrsnaAplikacija\bin\Mic
 D:\Dora Kurs\WEB programiranje\Cas16\ZavrsnaAplikacija\ZavrsnaAplikacija\bin\Microsoft.Owin.Security.xml
 D:\Dora Kurs\WEB programiranje\Cas16\ZavrsnaAplikacija\ZavrsnaAplikacija\bin\Microsoft.Owin.Security.Cookies.xml
 D:\Dora Kurs\WEB programiranje\Cas16\ZavrsnaAplikacija\ZavrsnaAplikacija\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Dora Kurs\WEB programiranje\Cas16\ZavrsnaAplikacija\ZavrsnaAplikacija\bin\Microsoft.Owin.Security.Google.dll
+D:\Dora Kurs\WEB programiranje\Cas16\ZavrsnaAplikacija\ZavrsnaAplikacija\bin\Microsoft.Owin.Security.Google.xml
+D:\Dora Kurs\WEB programiranje\Cas16\ZavrsnaAplikacija\ZavrsnaAplikacija\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Dora Kurs\WEB programiranje\Cas16\ZavrsnaAplikacija\ZavrsnaAplikacija\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Dora Kurs\WEB programiranje\Cas16\ZavrsnaAplikacija\ZavrsnaAplikacija\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Dora Kurs\WEB programiranje\Cas16\ZavrsnaAplikacija\ZavrsnaAplikacija\bin\Microsoft.Owin.Security.Facebook.xml

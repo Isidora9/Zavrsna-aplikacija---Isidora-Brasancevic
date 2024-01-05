@@ -9,6 +9,7 @@ using System.Linq;
 using System.Web;
 using ZavrsnaAplikacija.App_Start;
 using ZavrsnaAplikacija.Models;
+using Microsoft.Owin.Security.Google;
 
 namespace ZavrsnaAplikacija
 {
@@ -36,14 +37,17 @@ namespace ZavrsnaAplikacija
             app.UseTwoFactorSignInCookie(DefaultAuthenticationTypes.TwoFactorCookie, TimeSpan.FromMinutes(5));
 
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
-            //app.UseFacebookAuthentication(
-            //    appId: "936258728169769",
-            //    appSecret: "3d7e48d6174215c37c76e7c66959bff1");
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "253313662833-k8oko1fk688rdjl97a94f8tq14afdoih.apps.googleusercontent.com",
-            //    ClientSecret = "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"
-            //});
+            app.UseFacebookAuthentication(
+                appId: "778943660712158",
+                appSecret: "1b87c6eee4fb8944c74264c071db3dfd");
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "281751939036-6mtdb663ii73o28s1dh8b6jm2fbps7id.apps.googleusercontent.com",
+                ClientSecret = "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"
+            });
+            app.UseTwitterAuthentication(
+                consumerKey: "kqiAPh6mNiQSqcsuDbhMncDA7",
+                consumerSecret: "icl46MosS9wGm9gAfDRIskP83uxLcdrFpN5jU9SEUohpmSXcOh");
         }
     }
 }
