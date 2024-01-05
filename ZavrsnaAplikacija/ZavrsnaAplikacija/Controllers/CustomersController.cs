@@ -17,7 +17,11 @@ namespace ZavrsnaAplikacija.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            return View(db.Customers.ToList());
+            if (User.IsInRole(RoleName.Admin) || User.IsInRole(RoleName.Employee))
+            {
+                return View(db.Customers.ToList());
+            }
+            return View("ReadOnlyListCustomers");
         }
 
         // GET: Customers/Details/5
@@ -130,5 +134,17 @@ namespace ZavrsnaAplikacija.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult GetCustomers()
+        {
+            List<Customer> customers = db.Customers.ToList();
+            var subCategoryToReturn = customers.Select(s => new
+            {
+                CustomerId = s.CustomerId,
+                Name = s.Name,
+                DriverLicNo = s.DriverLicNo
+            });
+            return this.Json(new { data = subCategoryToReturn }, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
