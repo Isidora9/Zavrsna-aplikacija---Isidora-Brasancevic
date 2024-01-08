@@ -7,7 +7,8 @@
 
         <ul class="nav navbar-nav navbar-right">
             <li class="nav-item ms-md-3 ms-lg-3">
-                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", style = "text-decoration:none;" })
+                Hello @User.Identity.GetUserName()!
+                @*@Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", style = "text-decoration:none;" })*@
             </li>
             <li class="nav-item ms-md-3 ms-lg-3">
                 <a style = "text-decoration:none;" href="javascript:document.getElementById('logoutForm').submit()">Log off</a>

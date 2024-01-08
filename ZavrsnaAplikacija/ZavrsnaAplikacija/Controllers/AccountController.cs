@@ -71,8 +71,6 @@ namespace ZavrsnaAplikacija.Controllers
             {
                 return View(model);
             }
-            /// Users / Index
-            Debug.WriteLine("Evo urla   " + returnUrl);
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
@@ -113,7 +111,7 @@ namespace ZavrsnaAplikacija.Controllers
                     //await roleManager.CreateAsync(new IdentityRole("CanManageGenres"));
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
-
+                    Debug.WriteLine(model.UserRoles);
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
