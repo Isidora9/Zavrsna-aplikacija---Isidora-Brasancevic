@@ -18,7 +18,12 @@ namespace ZavrsnaAplikacija.Controllers
         public ActionResult Index()
         {
             var rentals = db.Rentals.Include(r => r.Car).Include(r => r.Customer);
-            return View(rentals.ToList());
+            //return View(rentals.ToList());
+            if (User.IsInRole(RoleName.Admin) || User.IsInRole(RoleName.Employee))
+            {
+                return View(rentals.ToList());
+            }
+            return View("ReadOnlyListRentals");
         }
 
         // GET: Rentals/Details/5
@@ -132,5 +137,19 @@ namespace ZavrsnaAplikacija.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult GetRentals()
+        {
+            List<Rental> rentals = db.Rentals.ToList();
+            var subCategoryToReturn = rentals.Select(s => new
+            {
+                RentalId = s.RentalId,
+                CarManufacturer = s.Car.Manufacturer,
+                CustomerName = s.Customer.Name,
+                DateRented = s.DateRented,
+                DateReturned = s.DateReturned
+            });
+            return this.Json(new { data = subCategoryToReturn }, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

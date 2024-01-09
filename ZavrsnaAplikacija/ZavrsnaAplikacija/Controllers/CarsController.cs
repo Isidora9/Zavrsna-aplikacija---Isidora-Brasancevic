@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -17,7 +18,13 @@ namespace ZavrsnaAplikacija.Controllers
         // GET: Cars
         public ActionResult Index()
         {
-            return View(db.Cars.ToList());
+            if (User.IsInRole(RoleName.Admin) || User.IsInRole(RoleName.Employee))
+            {
+                return View(db.Cars.ToList());
+            }
+            return View("ReadOnlyListCars");
+
+            //return View(db.Cars.ToList());
         }
 
         // GET: Cars/Details/5
@@ -129,6 +136,20 @@ namespace ZavrsnaAplikacija.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        public ActionResult GetCars()
+        {
+            List<Car> cars = db.Cars.ToList();
+            var subCategoryToReturn = cars.Select(s => new
+            {
+                CarId = s.CarId,
+                Manufacturer = s.Manufacturer,
+                Model = s.Model,
+                LicensePlate = s.LicensePlate,
+                Year = s.Year,
+                Available = s.Available
+            });
+            return this.Json(new { data = subCategoryToReturn }, JsonRequestBehavior.AllowGet);
         }
     }
 }

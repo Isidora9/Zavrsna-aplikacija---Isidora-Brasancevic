@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (ViewBag.displayMenu == "Yes")
+{
+    <h2 class="my-2">Welcome Admin. Now you can create user Role.</h2>
+    <h4>
+        @Html.ActionLink("Manage Roles", "Index", "Role")
+    </h4>
+}
+else
+{
+    <h2 class="my-2">Welcome <strong>@ViewBag.Name</strong>!</h2>
+}
+
+
+
