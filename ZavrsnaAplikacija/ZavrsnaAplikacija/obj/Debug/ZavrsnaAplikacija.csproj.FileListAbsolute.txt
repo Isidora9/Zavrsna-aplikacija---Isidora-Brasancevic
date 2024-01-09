@@ -87,3 +87,7 @@ D:\Dora Kurs\WEB programiranje\Cas16\ZavrsnaAplikacija\ZavrsnaAplikacija\obj\Deb
 D:\Dora Kurs\WEB programiranje\Cas16\ZavrsnaAplikacija\ZavrsnaAplikacija\obj\Debug\ZavrsnaAplikacija.csproj.CopyComplete
 D:\Dora Kurs\WEB programiranje\Cas16\ZavrsnaAplikacija\ZavrsnaAplikacija\obj\Debug\ZavrsnaAplikacija.dll
 D:\Dora Kurs\WEB programiranje\Cas16\ZavrsnaAplikacija\ZavrsnaAplikacija\obj\Debug\ZavrsnaAplikacija.pdb
+D:\Dora Kurs\WEB programiranje\Cas16\ZavrsnaAplikacija\ZavrsnaAplikacija\bin\AutoMapper.dll
+D:\Dora Kurs\WEB programiranje\Cas16\ZavrsnaAplikacija\ZavrsnaAplikacija\bin\AutoMapper.xml
+D:\Dora Kurs\WEB programiranje\Cas16\ZavrsnaAplikacija\ZavrsnaAplikacija\bin\Swashbuckle.Core.dll
+D:\Dora Kurs\WEB programiranje\Cas16\ZavrsnaAplikacija\ZavrsnaAplikacija\bin\WebActivatorEx.dll
